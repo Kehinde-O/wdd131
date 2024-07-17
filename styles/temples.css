@@ -9,6 +9,9 @@ header {
     color: white;
     text-align: center;
     padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
 }
 
 nav ul {
@@ -82,11 +85,26 @@ nav ul.open {
 }
 
 @media (max-width: 599px) {
+    .header{
+        display: flex !important;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .header h1{
+        flex-direction: row;
+        display: inline-block;
+    }
     .nav-toggle {
         display: block;
     }
 
     nav ul {
         display: none;
+        padding: 12px;
+        
+        /* position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0; */
     }
 }
