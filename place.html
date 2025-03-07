@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madagascar</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Madagascar</h1>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/place-lg-1160.webp" media="(min-width: 600px)">
+                <img src="images/place-sm-full.webp" alt="Lemurs in Madagascar">
+            </picture>
+        </section>
+        <section class="data">
+            <h2>Data</h2>
+            <ul>
+                <li><strong>Area:</strong> 587,041 sq km</li>
+                <li><strong>Population:</strong> 27,691,018</li>
+                <li><strong>Capital:</strong> Antananarivo</li>
+                <li><strong>Languages:</strong> Malagasy, French</li>
+                <li><strong>Currency:</strong> Malagasy Ariary</li>
+                <li><strong>Time Zone:</strong> UTC+3</li>
+                <li><strong>Calling Code:</strong> +261</li>
+                <li><strong>Internet TLD:</strong> .mg</li>
+            </ul>
+        </section>
+        <section class="weather">
+            <h2>Weather</h2>
+            <div class="weather-icon">
+                <img src="images/weather-icon.svg" alt="Weather icon">
+            </div>
+            <ul>
+                <li><strong>Temperature:</strong> 10°C</li>
+                <li><strong>Conditions:</strong> Partly Cloudy</li>
+                <li><strong>Wind:</strong> 5 km/h</li>
+                <li><strong>Wind Chill:</strong> <span id="windchill"></span></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Rubia Magdelena Francesco. Last Modification: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
