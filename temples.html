@@ -10,13 +10,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/temples.css">
         <link rel="stylesheet" href="styles/temples-large.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="./scripts/temples.js" defer></script>
     </head>
     <body>
         <header>
             <h1>Temple Album</h1>
             <nav>
-                <ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Old</a></li>
                     <li><a href="#">New</a></li>
