@@ -54,7 +54,7 @@ header nav ul li a:hover{
 
 main{
     display: flex;
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -103,6 +103,8 @@ main{
 
 .about_box{
     display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .my_image{
