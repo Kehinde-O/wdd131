@@ -3,49 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madagascar</title>
+    <title>Lagos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Madagascar</h1>
+        <h1>Lagos</h1>
     </header>
     <main>
         <section class="hero">
             <picture>
-                <source srcset="images/place-lg-1160.webp" media="(min-width: 600px)">
-                <img src="images/place-sm-full.webp" alt="Lemurs in Madagascar">
+                <source 
+                    srcset="./images/lasgidi-1920w.webp 1920w,
+                            ./images/lasgidi-1280w.webp 1280w"
+                    sizes="(min-width: 768px) 100vw"
+                    media="(min-width: 768px)"
+                    type="image/webp">
+                <source 
+                    srcset="./images/lasgidi-800w.webp 800w,
+                            ./images/lasgidi-480w.webp 480w"
+                    sizes="100vw"
+                    type="image/webp">
+                <img 
+                    src="./images/lasgidi.jpg"
+                    alt="Lagos City Skyline showing the beautiful metropolitan area with modern buildings and infrastructure"
+                    style="width: 100%; height: 100%; object-fit: cover;">
             </picture>
         </section>
         <section class="data">
             <h2>Data</h2>
             <ul>
-                <li><strong>Area:</strong> 587,041 sq  km</li>
-                <li><strong>Population:</strong> 27,691,018</li>
-                <li><strong>Capital:</strong> Antananarivo</li>
-                <li><strong>Languages:</strong> Malagasy, French</li>
-                <li><strong>Currency:</strong> Malagasy Ariary</li>
-                <li><strong>Time Zone:</strong> UTC+3</li>
-                <li><strong>Calling Code:</strong> +261</li>
-                <li><strong>Internet TLD:</strong> .mg</li>
+                <li><strong>Area:</strong> 3,577 sq km</li>
+                <li><strong>Population:</strong> 15.4 million</li>
+                <li><strong>State:</strong> Lagos State</li>
+                <li><strong>Languages:</strong> English, Yoruba</li>
+                <li><strong>Currency:</strong> Nigerian Naira</li>
+                <li><strong>Time Zone:</strong> UTC+1</li>
+                <li><strong>Calling Code:</strong> +234</li>
+                <li><strong>Internet TLD:</strong> .ng</li>
             </ul>
         </section>
         <section class="weather">
             <h2>Weather</h2>
-            <div class="weather-icon">
-                <img src="images/weather-icon.svg" alt="Weather icon">
-            </div>
+            <!-- <div class="weather-icon">
+                <img src="images/svg/cloud.svg" alt="Weather icon">
+            </div> -->
             <ul>
-                <li><strong>Temperature:</strong> 10°C</li>
+                <li><strong>Temperature:</strong> 31°C</li>
                 <li><strong>Conditions:</strong> Partly Cloudy</li>
-                <li><strong>Wind:</strong> 5 km/h</li>
+                <li><strong>Wind:</strong> 12 km/h</li>
                 <li><strong>Wind Chill:</strong> <span id="windchill"></span></li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="current-year"></span> Rubia Magdelena Francesco. Last Modification: <span id="last-modified"></span></p>
+        <p>&copy; <span id="current-year"></span> Kehinde John Omotoso. Lagos, Nigeria</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
     </footer>
 </body>
 </html>
