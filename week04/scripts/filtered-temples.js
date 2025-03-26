@@ -62,27 +62,6 @@ const temples = [
         dedicated: "1884, May, 17",
         area: 119619,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/logan-utah/400x250/logan-temple-768119-wallpaper.jpg"
-    },
-    {
-        templeName: "Accra Ghana",
-        location: "Accra, Ghana",
-        dedicated: "2004, January, 11",
-        area: 17500,
-        imageUrl: "https://picsum.photos/400/250?random=1"
-    },
-    {
-        templeName: "Vernal Utah",
-        location: "Vernal, Utah, United States",
-        dedicated: "1997, November, 2",
-        area: 38771,
-        imageUrl: "https://picsum.photos/400/250?random=2"
-    },
-    {
-        templeName: "Laie Hawaii",
-        location: "Laie, Hawaii, United States",
-        dedicated: "1919, November, 27",
-        area: 42100,
-        imageUrl: "https://picsum.photos/400/250?random=3"
     }
 ];
 
