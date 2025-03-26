@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #333;
@@ -22,6 +22,12 @@ h1 {
     margin-bottom: 1rem;
 }
 
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 2rem 0;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -30,18 +36,22 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav button {
+nav a {
+    display: inline-block;
     background-color: #34495e;
     color: white;
-    border: none;
+    text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
 
-nav button:hover {
+nav a:hover {
     background-color: #2980b9;
+}
+
+main {
+    padding-bottom: 4rem; /* Add space for fixed footer */
 }
 
 .temple-grid {
@@ -79,6 +89,7 @@ nav button:hover {
     color: #2c3e50;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    text-align: left;
 }
 
 .temple-info p {
@@ -107,7 +118,7 @@ footer {
         align-items: center;
     }
 
-    nav button {
+    nav a {
         width: 200px;
     }
 } 

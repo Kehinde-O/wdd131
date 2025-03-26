@@ -5,6 +5,9 @@
     <meta name="author" content="Kehinde John Omotoso">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temples of The Church of Jesus Christ of Latter-day Saints - Kehinde Omotoso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/filtered-temples.css">
     <meta name="description" content="Display and filter temples of The Church of Jesus Christ of Latter-day Saints">
 </head>
@@ -13,16 +16,17 @@
         <h1>Temples of The Church of Jesus Christ</h1>
         <nav>
             <ul>
-                <li><button id="homeFilter">Home</button></li>
-                <li><button id="oldFilter">Old</button></li>
-                <li><button id="newFilter">New</button></li>
-                <li><button id="largeFilter">Large</button></li>
-                <li><button id="smallFilter">Small</button></li>
+                <li><a href="#" id="homeFilter">Home</a></li>
+                <li><a href="#" id="oldFilter">Old</a></li>
+                <li><a href="#" id="newFilter">New</a></li>
+                <li><a href="#" id="largeFilter">Large</a></li>
+                <li><a href="#" id="smallFilter">Small</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <h2>Temple Gallery</h2>
         <div id="templeCards" class="temple-grid">
             <!-- Temple cards will be dynamically inserted here -->
         </div>
@@ -32,6 +36,6 @@
         <p>&copy; <span id="year"></span> | Temple Gallery | Last Modified: <span id="lastModified"></span></p>
     </footer>
     
-    <script src="scripts/filtered-temples.js"></script>
+    <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html> 
