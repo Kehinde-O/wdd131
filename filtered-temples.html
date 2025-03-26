@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kehinde John Omotoso">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temples of The Church of Jesus Christ of Latter-day Saints - Kehinde Omotoso</title>
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <meta name="description" content="Display and filter temples of The Church of Jesus Christ of Latter-day Saints">
+</head>
+<body>
+    <header>
+        <h1>Temples of The Church of Jesus Christ</h1>
+        <nav>
+            <ul>
+                <li><button id="homeFilter">Home</button></li>
+                <li><button id="oldFilter">Old</button></li>
+                <li><button id="newFilter">New</button></li>
+                <li><button id="largeFilter">Large</button></li>
+                <li><button id="smallFilter">Small</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="templeCards" class="temple-grid">
+            <!-- Temple cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Temple Gallery | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+    
+    <script src="scripts/filtered-temples.js"></script>
+</body>
+</html> 
