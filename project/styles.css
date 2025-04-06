@@ -1,0 +1,244 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F5F5F5;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2E7D32;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #6A1B9A;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Color Schema Section */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.color-sample {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.primary-color {
+    background-color: #2E7D32;
+}
+
+.secondary-color {
+    background-color: #FFA000;
+}
+
+.accent-color {
+    background-color: #6A1B9A;
+}
+
+.background-color {
+    background-color: #F5F5F5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.color-usage ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.color-usage li {
+    margin-bottom: 10px;
+}
+
+/* Typography Section */
+.font-sample {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.heading-font .sample {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.body-font .sample {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+/* Wireframe Section */
+.wireframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.wireframe {
+    flex: 1;
+    min-width: 300px;
+}
+
+.wireframe-image {
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #f5f5f5;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wireframe-image div {
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    padding: 10px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Mobile Wireframe */
+.mobile .wf-header {
+    height: 50px;
+}
+
+.mobile .wf-nav {
+    height: 40px;
+}
+
+.mobile .wf-hero {
+    height: 150px;
+}
+
+.mobile .wf-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 180px;
+}
+
+.mobile .wf-feature {
+    height: 50px;
+}
+
+.mobile .wf-cta {
+    height: 60px;
+}
+
+.mobile .wf-footer {
+    height: 40px;
+}
+
+/* Desktop Wireframe */
+.desktop .wf-header {
+    height: 60px;
+}
+
+.desktop .wf-content {
+    display: flex;
+    height: 450px;
+}
+
+.desktop .wf-nav {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.desktop .wf-nav p {
+    margin: 5px 0;
+    font-size: 0.85em;
+}
+
+.desktop .wf-main {
+    width: 80%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.desktop .wf-hero {
+    height: 150px;
+}
+
+.desktop .wf-features {
+    display: flex;
+    gap: 10px;
+    height: 150px;
+}
+
+.desktop .wf-feature {
+    flex: 1;
+}
+
+.desktop .wf-cta {
+    height: 60px;
+}
+
+.desktop .wf-footer {
+    height: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .color-palette {
+        flex-direction: column;
+    }
+    
+    .color-sample {
+        width: 100%;
+    }
+    
+    .wireframe-container {
+        flex-direction: column;
+    }
+} 
