@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Kehinde John Omotoso - Product Review Form">
+    <meta name="author" content="Kehinde John Omotoso">
+    <title>Product Review Form - WDD 131 - Kehinde John Omotoso</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/form.js" defer></script>
+    <script src="js/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review Form</h1>
+    </header>
+    
+    <main>
+        <form method="get" action="review.html">
+            <div class="form-group">
+                <label for="product">Product Name:</label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <fieldset>
+                    <legend>Overall Rating:</legend>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5" title="5 stars">★</label>
+                        
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars">★</label>
+                        
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars">★</label>
+                        
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars">★</label>
+                        
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star">★</label>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="form-group">
+                <label for="installation-date">Date of Installation:</label>
+                <input type="date" id="installation-date" name="installation-date" required>
+            </div>
+            
+            <div class="form-group">
+                <fieldset>
+                    <legend>Useful Features:</legend>
+                    <div class="features-container">
+                        <div class="feature-item">
+                            <input type="checkbox" id="feature1" name="feature" value="Durability">
+                            <label for="feature1">Durability</label>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <input type="checkbox" id="feature2" name="feature" value="Energy Efficiency">
+                            <label for="feature2">Energy Efficiency</label>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <input type="checkbox" id="feature3" name="feature" value="User-Friendly Interface">
+                            <label for="feature3">User-Friendly Interface</label>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <input type="checkbox" id="feature4" name="feature" value="Compact Design">
+                            <label for="feature4">Compact Design</label>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <input type="checkbox" id="feature5" name="feature" value="Performance">
+                            <label for="feature5">Performance</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="form-group">
+                <label for="review">Written Review:</label>
+                <textarea id="review" name="review" rows="5" placeholder="Share your experience with this product..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Your Name (optional):</label>
+                <input type="text" id="username" name="username">
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Submit Review" class="submit-button">
+            </div>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy;
+            <span id="currentyear"></span>
+            - Kehinde John Omotoso. Lagos, Nigeria</p>
+        <p>Last Updated:
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+</body>
+</html> 
