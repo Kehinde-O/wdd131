@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit your gardening review, question or feedback to Lagos Garden Guide. Share your experiences and connect with our community.">
+    <meta name="author" content="Kehinde John Omotoso">
+    <title>Submit Review | Lagos Garden Guide</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="images/garden_logo.png" type="image/png">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/lazy-loading.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <style>
+        /* Enhanced form styles */
+        .form-container {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: var(--space-xl);
+            margin-top: var(--space-lg);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .form-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .form-intro {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        fieldset {
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-lg);
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        fieldset:last-of-type {
+            border-bottom: none;
+        }
+        
+        legend {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            padding-bottom: var(--space-sm);
+            width: 100%;
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--text-dark);
+        }
+        
+        .required {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+            outline: none;
+            background-color: white;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-xs);
+        }
+        
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .radio-label:hover, .checkbox-label:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        
+        .radio-label input, .checkbox-label input {
+            margin-right: 10px;
+        }
+        
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            margin-top: var(--space-xs);
+        }
+        
+        .rating input {
+            display: none;
+        }
+        
+        .rating label {
+            font-size: 1.8rem;
+            color: #ddd;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: color 0.2s ease;
+        }
+        
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked ~ label {
+            color: #ffc107;
+        }
+        
+        .file-hint, .privacy-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .form-consent {
+            background-color: #f5f5f5;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .consent-label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: normal;
+        }
+        
+        .consent-label input {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+        }
+        
+        .submit-button, .reset-button {
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .submit-button {
+            background-color: var(--primary-color);
+            color: white;
+            flex: 2;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reset-button {
+            background-color: transparent;
+            color: #666;
+            border: 1px solid #ddd;
+            flex: 1;
+        }
+        
+        .reset-button:hover {
+            background-color: #f5f5f5;
+            border-color: #ccc;
+        }
+        
+        /* Enhanced community highlight cards */
+        .community-highlights {
+            margin-top: var(--space-xl);
+        }
+        
+        .community-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+        
+        .community-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid transparent;
+        }
+        
+        .community-card.success-story {
+            border-top-color: #4caf50; /* Green */
+        }
+        
+        .community-card.gardening-tip {
+            border-top-color: #2196f3; /* Blue */
+        }
+        
+        .community-card.question-answer {
+            border-top-color: #ff9800; /* Orange */
+        }
+        
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .community-card-header {
+            padding: var(--space-md) var(--space-lg);
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .community-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .success-story .community-badge {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #4caf50;
+        }
+        
+        .gardening-tip .community-badge {
+            background-color: rgba(33, 150, 243, 0.1);
+            color: #2196f3;
+        }
+        
+        .question-answer .community-badge {
+            background-color: rgba(255, 152, 0, 0.1);
+            color: #ff9800;
+        }
+        
+        .community-card-content {
+            padding: var(--space-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .community-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-dark);
+        }
+        
+        .community-card-text {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+            flex-grow: 1;
+            font-style: italic;
+        }
+        
+        .community-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--space-xs);
+            padding-top: var(--space-sm);
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .community-card-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .community-card-meta i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .radio-group, .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+            
+            .community-card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/garden_logo.png" alt="Lagos Garden Guide Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="Search for plants, guides...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="menu-toggle" aria-label="Toggle menu" class="mobile-only">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content area with sidebar and content -->
+        <div class="content-wrapper">
+            <!-- Sidebar navigation -->
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="getting-started.html"><i class="fas fa-seedling"></i> Getting Started</a></li>
+                    <li><a href="vegetables.html"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="indoor-plants.html"><i class="fas fa-leaf"></i> Indoor Plants</a></li>
+                    <li><a href="local-tips.html"><i class="fas fa-lightbulb"></i> Local Tips</a></li>
+                    <li class="active"><a href="form.html" class="active"><i class="fas fa-comment"></i> Submit Review</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content -->
+            <main>
+                <!-- Page header -->
+                <section class="page-header">
+                    <h1>Share Your Gardening Experience</h1>
+                    <p>Help our community grow by submitting your gardening questions, success stories, or feedback</p>
+                </section>
+
+                <!-- Form section -->
+                <section class="form-section">
+                    <div class="form-intro">
+                        <h2>Submit Your Review</h2>
+                        <p>Your input helps us improve our resources and assists other Lagos gardeners. Please fill out the form below with your gardening experiences, questions, or feedback.</p>
+                    </div>
+
+                    <div class="form-container">
+                        <form id="review-form" action="#" method="POST">
+                            <!-- Personal Information -->
+                            <fieldset>
+                                <legend><i class="fas fa-user-circle"></i> Your Information</legend>
+                                
+                                <div class="form-group">
+                                    <label for="name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="location">Area in Lagos</label>
+                                    <select id="location" name="location">
+                                        <option value="">-- Select your area --</option>
+                                        <option value="Ikeja">Ikeja</option>
+                                        <option value="Lekki">Lekki</option>
+                                        <option value="Victoria Island">Victoria Island</option>
+                                        <option value="Ikoyi">Ikoyi</option>
+                                        <option value="Yaba">Yaba</option>
+                                        <option value="Surulere">Surulere</option>
+                                        <option value="Ajah">Ajah</option>
+                                        <option value="Maryland">Maryland</option>
+                                        <option value="Gbagada">Gbagada</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group" id="other-location-group" style="display: none;">
+                                    <label for="other-location">Please Specify Location</label>
+                                    <input type="text" id="other-location" name="other-location" placeholder="Enter your location">
+                                </div>
+                            </fieldset>
+
+                            <!-- Gardening Experience -->
+                            <fieldset>
+                                <legend><i class="fas fa-seedling"></i> Your Gardening Experience</legend>
+                                
+                                <div class="form-group">
+                                    <label>Experience Level</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="beginner" checked> 
+                                            Beginner (0-1 years)
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="intermediate"> 
+                                            Intermediate (1-3 years)
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="experienced"> 
+                                            Experienced (3+ years)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>What do you grow? (Select all that apply)</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="garden-type" value="vegetables"> 
+                                            Vegetables
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="garden-type" value="fruits"> 
+                                            Fruits
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="garden-type" value="herbs"> 
+                                            Herbs
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="garden-type" value="flowers"> 
+                                            Flowers
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="garden-type" value="indoor-plants"> 
+                                            Indoor Plants
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="garden-space">Garden Space</label>
+                                    <select id="garden-space" name="garden-space">
+                                        <option value="">-- Select garden type --</option>
+                                        <option value="balcony">Balcony Garden</option>
+                                        <option value="container">Container Garden</option>
+                                        <option value="small-yard">Small Yard (less than 20sqm)</option>
+                                        <option value="medium-yard">Medium Yard (20-100sqm)</option>
+                                        <option value="large-yard">Large Yard (100+ sqm)</option>
+                                        <option value="community">Community Garden Plot</option>
+                                        <option value="indoor-only">Indoor Plants Only</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <!-- Review Content -->
+                            <fieldset>
+                                <legend><i class="fas fa-comment-alt"></i> Your Review or Question</legend>
+                                
+                                <div class="form-group">
+                                    <label for="review-type">Type of Submission <span class="required">*</span></label>
+                                    <select id="review-type" name="review-type" required>
+                                        <option value="">-- Select submission type --</option>
+                                        <option value="question">Question</option>
+                                        <option value="success-story">Success Story</option>
+                                        <option value="challenge">Challenge/Problem</option>
+                                        <option value="tip">Gardening Tip</option>
+                                        <option value="feedback">Site Feedback</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject/Title <span class="required">*</span></label>
+                                    <input type="text" id="subject" name="subject" placeholder="Enter a descriptive title for your submission" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message <span class="required">*</span></label>
+                                    <textarea id="message" name="message" rows="6" placeholder="Share your gardening experience, question, or feedback..." required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="image">Upload Image (Optional)</label>
+                                    <input type="file" id="image" name="image" accept="image/*">
+                                    <p class="file-hint">Share an image of your garden, plants, or the issue you're facing (Max size: 5MB)</p>
+                                </div>
+                            </fieldset>
+
+                            <!-- Rating -->
+                            <fieldset>
+                                <legend><i class="fas fa-star"></i> Rate Our Website</legend>
+                                
+                                <div class="form-group">
+                                    <label>How helpful was our website? (Optional)</label>
+                                    <div class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star3" name="rating" value="3">
+                                        <label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star1" name="rating" value="1">
+                                        <label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Consent and Submit -->
+                            <div class="form-consent">
+                                <label class="consent-label">
+                                    <input type="checkbox" name="consent" required>
+                                    I agree that my submission may be shared on the Lagos Garden Guide website. Personal contact information will remain private. <span class="required">*</span>
+                                </label>
+                                <p class="privacy-note">We value your privacy. Your email will only be used to respond to your submission and will not be shared with third parties.</p>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="submit" class="submit-button">Submit Your Review</button>
+                                <button type="reset" class="reset-button">Reset Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Community highlights section -->
+                <section class="community-highlights">
+                    <h2>Community Highlights</h2>
+                    <p>See what other Lagos gardeners are sharing:</p>
+                    
+                    <div class="community-card-container">
+                        <div class="community-card success-story">
+                            <div class="community-card-header">
+                                <span class="community-badge">Success Story</span>
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="community-card-content">
+                                <h3 class="community-card-title">Balcony Tomato Success</h3>
+                                <p class="community-card-text">"I never thought I could grow tomatoes on my small Lekki balcony, but using container gardening techniques from this site, I harvested over 30 tomatoes from just two plants!"</p>
+                                <div class="community-card-meta">
+                                    <span><i class="fas fa-user"></i> Adebola O.</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Lekki</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="community-card gardening-tip">
+                            <div class="community-card-header">
+                                <span class="community-badge">Gardening Tip</span>
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="community-card-content">
+                                <h3 class="community-card-title">Harmattan Season Care</h3>
+                                <p class="community-card-text">"During harmattan season, I mist my plants early morning and place small bowls of water near them to increase humidity. My indoor plants thrive even during the dusty, dry months."</p>
+                                <div class="community-card-meta">
+                                    <span><i class="fas fa-user"></i> Michael E.</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Victoria Island</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="community-card question-answer">
+                            <div class="community-card-header">
+                                <span class="community-badge">Question & Answer</span>
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="community-card-content">
+                                <h3 class="community-card-title">Pest Control for Hibiscus</h3>
+                                <p class="community-card-text">"My hibiscus had aphids. The neem oil spray recipe shared by the community worked perfectly! Now my hibiscus is flowering beautifully again."</p>
+                                <div class="community-card-meta">
+                                    <span><i class="fas fa-user"></i> Chioma A.</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Surulere</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subscribe section -->
+                <section class="subscribe-section">
+                    <h2>Join Our Gardening Community</h2>
+                    <p>Subscribe to our newsletter and join our online garden community to share experiences, ask questions, and connect with other Lagos gardeners.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                    <div class="downloads">
+                        <h3>Community Resources</h3>
+                        <ul>
+                            <li><a href="downloads/community-guidelines.pdf"><i class="fas fa-file-pdf"></i> Community Guidelines</a></li>
+                            <li><a href="downloads/success-story-template.pdf"><i class="fas fa-file-pdf"></i> Success Story Template</a></li>
+                            <li><a href="downloads/garden-journal-template.pdf"><i class="fas fa-file-pdf"></i> Garden Journal Template</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer with sitemap -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Site Map</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="indoor-plants.html">Indoor Plants</a></li>
+                        <li><a href="local-tips.html">Local Tips</a></li>
+                        <li><a href="form.html">Submit Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-envelope"></i> info@lagosgarden.guide</p>
+                        <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Lagos Garden Guide. All rights reserved.</p>
+                <p>Author: Kehinde John Omotoso | Course: WDD131 | Last Edited on: <span id="last-edit-date"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            // Mobile menu toggle
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Set last edited date
+            document.getElementById('last-edit-date').textContent = new Date().toLocaleDateString();
+            
+            // Show/hide "Other" location field
+            const locationSelect = document.getElementById('location');
+            const otherLocationGroup = document.getElementById('other-location-group');
+            
+            locationSelect.addEventListener('change', function() {
+                if (this.value === 'Other') {
+                    otherLocationGroup.style.display = 'block';
+                } else {
+                    otherLocationGroup.style.display = 'none';
+                }
+            });
+            
+            // Form submission handling
+            const reviewForm = document.getElementById('review-form');
+            
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to a server here
+                // For demo purposes, show a success message
+                alert('Thank you for your submission! Our team will review it shortly.');
+                reviewForm.reset();
+            });
+        });
+    </script>
+</body>
+</html> 

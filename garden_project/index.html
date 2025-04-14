@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your comprehensive guide to gardening in Lagos, Nigeria. Learn about local plants, get expert tips, and join our community.">
+    <meta name="author" content="Kehinde John Omotoso">
+    <title>Lagos Garden Guide - Your Local Gardening Resource</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="images/garden_logo.png" type="image/png">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/lazy-loading.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/garden_logo.png" alt="Lagos Garden Guide Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="Search for plants, guides...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="menu-toggle" aria-label="Toggle menu" class="mobile-only">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content area with sidebar and content -->
+        <div class="content-wrapper">
+            <!-- Sidebar navigation -->
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li class="active"><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="getting-started.html"><i class="fas fa-seedling"></i> Getting Started</a></li>
+                    <li><a href="vegetables.html"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="indoor-plants.html"><i class="fas fa-leaf"></i> Indoor Plants</a></li>
+                    <li><a href="local-tips.html"><i class="fas fa-lightbulb"></i> Local Tips</a></li>
+                    <li><a href="form.html"><i class="fas fa-comment"></i> Submit Review</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content -->
+            <main>
+                <!-- Slider section -->
+                <section class="slider-section">
+                    <div class="slider">
+                        <img src="https://img.freepik.com/free-photo/window-with-flowerpots_1112-238.jpg?t=st=1744625088~exp=1744628688~hmac=5ec20a8e802d0a2ba656a039f74738821d5268ec9a604f47385d00ca85d3fe08&w=2000" alt="Seedling tray with young plants" class="slide active">
+                        <img src="https://images.unsplash.com/photo-1649711924619-6e7225015d5f?q=80&w=3135&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Urban garden example" class="slide">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&h=350&fit=crop&auto=format" alt="Hand planting seedling" class="slide">
+                        <div class="slider-controls">
+                            <button class="prev-slide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                            <div class="slider-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                            </div>
+                            <button class="next-slide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Three column section -->
+                <section class="three-column-section">
+                    <div class="column seasonal-tips">
+                        <h2>Seasonal Gardening Tips</h2>
+                        <div class="tip-item">
+                            <h3>Rainy Season Gardening</h3>
+                            <p>Learn how to protect your plants during heavy rainfall and manage soil drainage for healthier growth during Lagos's rainy months.</p>
+                            <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="tip-item">
+                            <h3>Dry Season Care</h3>
+                            <p>Tips on watering efficiency and plant protection during hot, dry periods to keep your garden thriving even in harsh conditions.</p>
+                            <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="column featured-plants">
+                        <h2>Featured Plants</h2>
+                        <div class="plant-item">
+                            <img src="https://img.freepik.com/free-photo/closeup-shot-beautiful-hawaiian-hibiscus-tuscany-elba-italy_181624-18357.jpg?t=st=1744625639~exp=1744629239~hmac=f774f32f1cd7f6fe6363228e00b270ebb6417b57f0913cc53308266e7ac2e2f2&w=2000" alt="Hibiscus flower" loading="lazy">
+                            <h3>Hibiscus</h3>
+                            <p>A vibrant flowering plant perfect for Lagos gardens, adding tropical beauty with its colorful blooms throughout the year.</p>
+                            <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="plant-item">
+                            <img src="https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aloe Vera" loading="lazy">
+                            <h3>Aloe Vera</h3>
+                            <p>Medicinal plant that thrives in Lagos weather, requiring minimal care while offering numerous health and skincare benefits.</p>
+                            <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="column community-stories">
+                        <h2>Community Stories</h2>
+                        <div class="story-item">
+                            <h3>Balcony Gardening Success</h3>
+                            <p>How Mrs. Adewale transformed her small balcony into a lush vegetable garden, proving that space limitations are no barrier to urban gardening.</p>
+                            <a href="#" class="btn-text">Read Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="story-item">
+                            <h3>School Garden Project</h3>
+                            <p>Local school creates educational garden for students to learn about food production, sustainability, and the joy of growing their own food.</p>
+                            <a href="#" class="btn-text">Read Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subscribe section -->
+                <section class="subscribe-section">
+                    <h2>Subscribe & Resource Downloads</h2>
+                    <p>Join our newsletter to receive seasonal planting guides, gardening tips, and exclusive content tailored for Lagos gardeners.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                    <div class="downloads">
+                        <h3>Free Resources</h3>
+                        <ul>
+                            <li><a href="downloads/planting-calendar.pdf"><i class="fas fa-file-pdf"></i> Lagos Planting Calendar</a></li>
+                            <li><a href="downloads/pest-control-guide.pdf"><i class="fas fa-file-pdf"></i> Natural Pest Control Guide</a></li>
+                            <li><a href="downloads/container-gardening.pdf"><i class="fas fa-file-pdf"></i> Container Gardening Tips</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer with sitemap -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Site Map</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="indoor-plants.html">Indoor Plants</a></li>
+                        <li><a href="local-tips.html">Local Tips</a></li>
+                        <li><a href="form.html">Submit Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-envelope"></i> info@lagosgarden.guide</p>
+                        <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Lagos Garden Guide. All rights reserved.</p>
+                <p>Author: Kehinde John Omotoso | Course: WDD131 | Last Edited on: <span id="last-edit-date"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Set last edited date
+            document.getElementById('last-edit-date').textContent = new Date().toLocaleDateString();
+            
+            // Image slider functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            function showSlide(n) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show the selected slide
+                slides[n].classList.add('active');
+                dots[n].classList.add('active');
+                currentSlide = n;
+            }
+            
+            // Next/previous controls
+            document.querySelector('.next-slide')?.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            document.querySelector('.prev-slide')?.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            // Dot controls
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(function() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+    </script>
+</body>
+</html> 

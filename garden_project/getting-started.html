@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Getting started with gardening in Lagos, Nigeria. Learn the basics, find the right tools, and start your garden journey.">
+    <meta name="author" content="Kehinde John Omotoso">
+    <title>Getting Started | Lagos Garden Guide</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="images/garden_logo.png" type="image/png">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/lazy-loading.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/garden_logo.png" alt="Lagos Garden Guide Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="Search for plants, guides...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="menu-toggle" aria-label="Toggle menu" class="mobile-only">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content area with sidebar and content -->
+        <div class="content-wrapper">
+            <!-- Sidebar navigation -->
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="getting-started.html" class="active"><i class="fas fa-seedling"></i> Getting Started</a></li>
+                    <li><a href="vegetables.html"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="indoor-plants.html"><i class="fas fa-leaf"></i> Indoor Plants</a></li>
+                    <li><a href="local-tips.html"><i class="fas fa-lightbulb"></i> Local Tips</a></li>
+                    <li><a href="form.html"><i class="fas fa-comment"></i> Submit Review</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content -->
+            <main>
+                <!-- Page header -->
+                <section class="page-header">
+                    <h1>Getting Started with Gardening in Lagos</h1>
+                    <p>Everything you need to know to begin your gardening journey in Nigeria's vibrant city</p>
+                </section>
+
+                <!-- Basics section -->
+                <section>
+                    <h2>Gardening Basics</h2>
+                    <p>Starting a garden in Lagos requires understanding our unique climate and soil conditions. Here are the essential steps to begin your gardening journey:</p>
+                    
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Choose Your Space</h3>
+                                <p>Whether you have a balcony, small yard, or larger outdoor area, identify where your plants will thrive. Most vegetables need at least 6 hours of sunlight daily.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Test Your Soil</h3>
+                                <p>Lagos soil varies by area. Test your soil's pH and nutrient levels. Most plants prefer slightly acidic soil (pH 6.0-7.0). Add organic matter like compost to improve soil quality.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Select Plants for Our Climate</h3>
+                                <p>Choose plants that thrive in Lagos's tropical climate. Start with heat-tolerant vegetables and native flowering plants that can withstand our rainy and dry seasons.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Create a Watering Schedule</h3>
+                                <p>Establish a consistent watering routine. During the dry season, water deeply in the early morning or evening. In the rainy season, ensure proper drainage to prevent waterlogging.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="basics-image">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=800&auto=format" alt="Hand planting a seedling in soil" loading="lazy">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Garden spaces section -->
+                <section>
+                    <h2>Garden Spaces in Lagos</h2>
+                    <p>You don't need a large yard to garden in Lagos. Here are some creative spaces where your garden can flourish:</p>
+                    
+                    <div class="space-cards-container">
+                        <div class="space-card">
+                            <div class="space-card-image">
+                                <img src="https://images.unsplash.com/photo-1619970887815-d98fbbd2480c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Balcony garden with potted plants" loading="lazy">
+                            </div>
+                            <div class="space-card-content">
+                                <h3>Balcony Gardens</h3>
+                                <p>Utilize vertical space with hanging planters and railing boxes. Great for herbs, small vegetables, and flowering plants.</p>
+                                <button class="toggle-details" data-target="balcony-details">Learn More <i class="fas fa-chevron-down"></i></button>
+                                <div class="hidden-details" id="balcony-details">
+                                    <p>Balcony gardens work best with lightweight containers, proper drainage, and consideration for sun exposure. Consider shade-tolerant plants if your balcony doesn't receive much sunlight.</p>
+                                    <ul>
+                                        <li>Use vertical space with hanging planters</li>
+                                        <li>Choose lightweight containers for safety</li>
+                                        <li>Consider wind exposure when selecting plants</li>
+                                        <li>Install drip trays to prevent water runoff</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-card">
+                            <div class="space-card-image">
+                                <img src="https://images.unsplash.com/photo-1628246498566-c846ce32a5b5?q=80&w=3279&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Indoor plants on a windowsill" loading="lazy">
+                            </div>
+                            <div class="space-card-content">
+                                <h3>Indoor Gardens</h3>
+                                <p>Perfect for apartments, indoor gardens can include potted herbs, air-purifying plants, and decorative houseplants.</p>
+                                <button class="toggle-details" data-target="indoor-details">Learn More <i class="fas fa-chevron-down"></i></button>
+                                <div class="hidden-details" id="indoor-details">
+                                    <p>Choose plants that thrive in indoor conditions with varying light levels. Consider snake plants, peace lilies, and herbs like basil and mint that can grow well indoors.</p>
+                                    <ul>
+                                        <li>Place plants near windows for natural light</li>
+                                        <li>Group plants to increase humidity</li>
+                                        <li>Use decorative pots that complement your decor</li>
+                                        <li>Consider grow lights for low-light spaces</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-card">
+                            <div class="space-card-image">
+                                <img src="https://images.unsplash.com/photo-1510478946814-7229b607bfe0?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Raised bed garden with vegetables" loading="lazy">
+                            </div>
+                            <div class="space-card-content">
+                                <h3>Container Gardens</h3>
+                                <p>Use pots, buckets, or repurposed containers to create a mobile garden that can be moved as needed to catch sunlight.</p>
+                                <button class="toggle-details" data-target="container-details">Learn More <i class="fas fa-chevron-down"></i></button>
+                                <div class="hidden-details" id="container-details">
+                                    <p>Container gardens require more frequent watering but offer flexibility. Use high-quality potting soil and ensure adequate drainage. Container sizes should match plant needs.</p>
+                                    <ul>
+                                        <li>Use larger containers for root vegetables</li>
+                                        <li>Ensure proper drainage holes in all containers</li>
+                                        <li>Position containers for optimal sun exposure</li>
+                                        <li>Consider self-watering containers for consistency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Essential tools section -->
+                <section>
+                    <h2>Essential Gardening Tools</h2>
+                    <p>Having the right tools makes gardening more enjoyable and efficient. Here are the must-have tools for Lagos gardeners:</p>
+                    
+                    <div class="tools-container">
+                        <div class="tools-image">
+                            <img src="https://images.unsplash.com/photo-1597764983031-60a74afb8692?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Essential gardening tools laid out" loading="lazy">
+                        </div>
+                        <div class="tools-content">
+                            <ul id="tools-list">
+                                <li>
+                                    <strong>Hand Trowel</strong> - For digging small holes and transplanting seedlings.
+                                </li>
+                                <li>
+                                    <strong>Pruning Shears</strong> - For trimming and harvesting plants.
+                                </li>
+                                <li>
+                                    <strong>Watering Can</strong> - With a rain spout for gentle watering of seedlings.
+                                </li>
+                                <li>
+                                    <strong>Garden Gloves</strong> - To protect your hands from thorns, insects, and soil.
+                                </li>
+                                <li>
+                                    <strong>Hand Rake</strong> - For removing weeds and aerating soil.
+                                </li>
+                                <li>
+                                    <strong>Garden Hoe</strong> - For larger gardens to prepare soil and remove weeds.
+                                </li>
+                                <li>
+                                    <strong>Watering Hose</strong> - With adjustable nozzle for larger gardens.
+                                </li>
+                            </ul>
+                            
+                            <p>You can find these tools at local markets in Lagos or at gardening shops in shopping centers like Ikeja City Mall and Palms Shopping Mall.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Beginner projects section -->
+                <section>
+                    <h2>Beginner-Friendly Garden Projects</h2>
+                    <p>Start your gardening journey with these simple projects that yield rewarding results:</p>
+                    
+                    <div class="projects-container">
+                        <div class="project-card">
+                            <img src="https://plus.unsplash.com/premium_photo-1678653651270-9f0f68119d99?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Herb garden in containers" loading="lazy">
+                            <h3>Herb Garden</h3>
+                            <p>Start with easy-to-grow herbs like basil, mint, and rosemary in small pots. Perfect for kitchen windowsills or balconies, providing fresh flavors for your cooking.</p>
+                            <a href="#" class="btn-text">View Tutorial <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1619284477225-647ffe3d91bd?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Container vegetable garden" loading="lazy">
+                            <h3>Container Vegetable Garden</h3>
+                            <p>Grow vegetables like tomatoes, peppers, and leafy greens in containers. These plants are forgiving for beginners and produce food within a few months.</p>
+                            <a href="#" class="btn-text">View Tutorial <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1743536142320-febe953f76db?q=80&w=3188&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Succulent garden arrangement" loading="lazy">
+                            <h3>Succulent Garden</h3>
+                            <p>Create a low-maintenance display with drought-resistant succulents. These hardy plants are perfect for busy beginners and add a modern touch to any space.</p>
+                            <a href="#" class="btn-text">View Tutorial <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Get Started Categories section -->
+                <section>
+                    <h2>Gardening Categories</h2>
+                    <p>Explore different gardening approaches to find what works best for your space and lifestyle in Lagos:</p>
+                    
+                    <div class="get-started-container">
+                        <div class="get-started-card">
+                            <div class="get-started-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="get-started-content">
+                                <h3>Organic Gardening</h3>
+                                <p>Grow plants without synthetic pesticides or fertilizers, using natural methods for pest control and soil enrichment.</p>
+                                <ul class="get-started-list">
+                                    <li>Use compost for fertilizer</li>
+                                    <li>Natural pest control</li>
+                                    <li>Companion planting</li>
+                                </ul>
+                                <div class="button-container">
+                                    <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="get-started-card">
+                            <div class="get-started-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="get-started-content">
+                                <h3>Water-Wise Gardening</h3>
+                                <p>Conserve water with drought-resistant plants and efficient irrigation techniques ideal for Lagos's dry season.</p>
+                                <ul class="get-started-list">
+                                    <li>Drought-tolerant plants</li>
+                                    <li>Mulching techniques</li>
+                                    <li>Rainwater harvesting</li>
+                                </ul>
+                                <div class="button-container">
+                                    <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="get-started-card">
+                            <div class="get-started-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="get-started-content">
+                                <h3>Kitchen Gardening</h3>
+                                <p>Grow your own fresh herbs, vegetables, and fruits for cooking, even in limited space like a balcony or windowsill.</p>
+                                <ul class="get-started-list">
+                                    <li>Culinary herbs</li>
+                                    <li>Compact vegetables</li>
+                                    <li>Vertical growing methods</li>
+                                </ul>
+                                <div class="button-container">
+                                    <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="get-started-card">
+                            <div class="get-started-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="get-started-content">
+                                <h3>Native Plant Gardening</h3>
+                                <p>Focus on indigenous Nigerian plants that are adapted to our climate and support local pollinators and wildlife.</p>
+                                <ul class="get-started-list">
+                                    <li>Support local ecosystems</li>
+                                    <li>Lower maintenance needs</li>
+                                    <li>Preserve Nigerian flora</li>
+                                </ul>
+                                <div class="button-container">
+                                    <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subscribe section -->
+                <section class="subscribe-section">
+                    <h2>Get Gardening Updates</h2>
+                    <p>Subscribe to our newsletter for seasonal planting guides, beginner tips, and exclusive content tailored for Lagos gardeners.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                    <div class="downloads">
+                        <h3>Beginner Resources</h3>
+                        <ul>
+                            <li><a href="downloads/beginner-checklist.pdf"><i class="fas fa-file-pdf"></i> Beginner's Checklist</a></li>
+                            <li><a href="downloads/soil-guide.pdf"><i class="fas fa-file-pdf"></i> Lagos Soil Guide</a></li>
+                            <li><a href="downloads/watering-schedule.pdf"><i class="fas fa-file-pdf"></i> Seasonal Watering Schedule</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer with sitemap -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Site Map</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="indoor-plants.html">Indoor Plants</a></li>
+                        <li><a href="local-tips.html">Local Tips</a></li>
+                        <li><a href="form.html">Submit Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-envelope"></i> info@lagosgarden.guide</p>
+                        <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Lagos Garden Guide. All rights reserved.</p>
+                <p>Author: Kehinde John Omotoso | Course: WDD131 | Last Edited on: <span id="last-edit-date"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            // Mobile menu toggle
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Set last edited date
+            document.getElementById('last-edit-date').textContent = new Date().toLocaleDateString();
+            
+            // Toggle details for space cards with smooth animation
+            const toggleButtons = document.querySelectorAll('.toggle-details');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get the target details element using data-target attribute
+                    const targetId = this.getAttribute('data-target');
+                    const details = document.getElementById(targetId);
+                    
+                    if (details) {
+                        // Toggle active class on the button and details
+                        this.classList.toggle('active');
+                        details.classList.toggle('active');
+                        
+                        // Update button text based on state
+                        if (this.classList.contains('active')) {
+                            this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                        } else {
+                            this.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
+                        }
+                        
+                        // Close other open details when opening a new one
+                        if (details.classList.contains('active')) {
+                            toggleButtons.forEach(otherButton => {
+                                if (otherButton !== button) {
+                                    const otherId = otherButton.getAttribute('data-target');
+                                    const otherDetails = document.getElementById(otherId);
+                                    
+                                    if (otherDetails && otherDetails.classList.contains('active')) {
+                                        otherButton.classList.remove('active');
+                                        otherDetails.classList.remove('active');
+                                        otherButton.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Add animation on scroll for step cards and space cards
+            const animateOnScroll = () => {
+                const items = document.querySelectorAll('.step-card, .space-card, .project-card, .get-started-card');
+                
+                items.forEach((item, index) => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (itemPosition < screenPosition) {
+                        // Add staggered animation delay based on index
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            };
+            
+            // Initial check on page load
+            animateOnScroll();
+            
+            // Add scroll listener
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html> 

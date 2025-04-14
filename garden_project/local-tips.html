@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Local gardening tips for Lagos, Nigeria. Learn about native plants, seasonal considerations, and expert advice for your garden.">
+    <meta name="author" content="Kehinde John Omotoso">
+    <title>Local Tips | Lagos Garden Guide</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="images/garden_logo.png" type="image/png">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/lazy-loading.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/garden_logo.png" alt="Lagos Garden Guide Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="Search for plants, guides...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="menu-toggle" aria-label="Toggle menu" class="mobile-only">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content area with sidebar and content -->
+        <div class="content-wrapper">
+            <!-- Sidebar navigation -->
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="getting-started.html"><i class="fas fa-seedling"></i> Getting Started</a></li>
+                    <li><a href="vegetables.html"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="indoor-plants.html"><i class="fas fa-leaf"></i> Indoor Plants</a></li>
+                    <li class="active"><a href="local-tips.html" class="active"><i class="fas fa-lightbulb"></i> Local Tips</a></li>
+                    <li><a href="form.html"><i class="fas fa-comment"></i> Submit Review</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content -->
+            <main>
+                <!-- Page header -->
+                <section class="page-header">
+                    <h1>Lagos Gardening Tips & Solutions</h1>
+                    <p>Expert advice tailored specifically for Lagos's unique climate and urban gardening challenges</p>
+                </section>
+
+                <!-- Climate section -->
+                <section>
+                    <h2>Understanding Lagos's Climate</h2>
+                    <p>Lagos has a tropical savanna climate with distinct wet and dry seasons. Understanding these seasonal patterns is essential for successful gardening:</p>
+                    
+                    <div class="climate-seasons">
+                        <div class="season-card">
+                            <div class="season-icon">
+                                <i class="fas fa-cloud-rain"></i>
+                            </div>
+                            <div class="season-content">
+                                <h3>April - October</h3>
+                                <h4>Rainy Season</h4>
+                                <p>Characterized by heavy rainfall, high humidity (80-90%), and slightly cooler temperatures (24-28°C). Perfect for growing most vegetables and tropical plants with proper drainage management.</p>
+                                <div class="season-tags">
+                                    <span><i class="fas fa-tint"></i> Heavy rainfall</span>
+                                    <span><i class="fas fa-temperature-high"></i> Moderate temps</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="season-card">
+                            <div class="season-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="season-content">
+                                <h3>November - March</h3>
+                                <h4>Dry Season</h4>
+                                <p>Marked by little to no rainfall, lower humidity (55-75%), and higher temperatures (25-33°C). Requires consistent watering and sometimes shade for sensitive plants. The harmattan period brings dusty conditions.</p>
+                                <div class="season-tags">
+                                    <span><i class="fas fa-sun"></i> High sun exposure</span>
+                                    <span><i class="fas fa-temperature-high"></i> Hot temps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="basics-image">
+                        <img src="https://images.unsplash.com/photo-1720278430582-b75dfe50c915?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Heavy rainfall in Lagos" loading="lazy">
+                    </div>
+                </section>
+
+           
+
+                <!-- Local pest management section -->
+                <section>
+                    <h2>Natural Pest Management</h2>
+                    <p>Lagos's tropical climate creates perfect conditions for many garden pests. These natural, locally-sourced solutions help manage common pests without harmful chemicals:</p>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="accordion-title">Neem Oil Spray</h3>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Neem oil is readily available in Lagos markets and works as an excellent broad-spectrum natural pesticide. For a simple spray:</p>
+                                <ul>
+                                    <li>Mix 2 teaspoons of neem oil with 1 teaspoon of mild liquid soap in 1 liter of water</li>
+                                    <li>Shake well and spray on affected plants, focusing on the undersides of leaves</li>
+                                    <li>Apply early morning or evening, not during hot midday sun</li>
+                                    <li>Repeat weekly until pests are controlled</li>
+                                </ul>
+                                <p>Effective against: aphids, whiteflies, mealybugs, and many caterpillars common in Lagos gardens.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="accordion-title">Pepper and Garlic Spray</h3>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Using locally available hot peppers and garlic creates a potent insect repellent:</p>
+                                <ul>
+                                    <li>Blend 3-4 hot peppers (scotch bonnet works well) and 1 bulb of garlic with 2 cups of water</li>
+                                    <li>Strain the mixture and add to 1 liter of water with 1 tablespoon of liquid soap</li>
+                                    <li>Let sit overnight, then spray on plants</li>
+                                    <li>Caution: Wear gloves and avoid contact with eyes when preparing</li>
+                                </ul>
+                                <p>Effective against: many chewing and sucking insects including grasshoppers that are common during Lagos's dry season.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="accordion-title">Companion Planting</h3>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Strategic placement of certain plants can deter pests naturally in Lagos gardens:</p>
+                                <ul>
+                                    <li><strong>Marigolds:</strong> Plant throughout the garden to deter nematodes and many insects</li>
+                                    <li><strong>Lemongrass:</strong> Widely available in Lagos, repels mosquitoes and some garden pests</li>
+                                    <li><strong>Basil:</strong> Plant near tomatoes to improve flavor and repel flies and mosquitoes</li>
+                                    <li><strong>Scent Leaf (Ocimum gratissimum):</strong> This local Nigerian herb repels insects and has medicinal properties</li>
+                                </ul>
+                                <p>This method works continuously and provides additional herbs and flowers for cooking or decoration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="accordion-title">Beneficial Insects</h3>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Encourage these natural predators in your Lagos garden:</p>
+                                <ul>
+                                    <li><strong>Ladybugs:</strong> Feed on aphids, mealybugs, and scale insects</li>
+                                    <li><strong>Praying Mantis:</strong> Naturally occurring in Lagos, they eat a variety of garden pests</li>
+                                    <li><strong>Dragonflies:</strong> Control mosquitoes and small flying insects</li>
+                                    <li><strong>Spiders:</strong> Though sometimes feared, garden spiders are excellent pest controllers</li>
+                                </ul>
+                                <p>Attract these beneficial insects by avoiding broad-spectrum pesticides and planting flowers like sunflowers, cosmos, and zinnias that provide habitat and food.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Local sourcing section -->
+                <section>
+                    <h2>Where to Source Gardening Supplies in Lagos</h2>
+                    <div class="supply-stores">
+                        <div class="store-card">
+                            <h3>Plant Nurseries</h3>
+                            <p>Visit these local nurseries for quality plants and gardening advice:</p>
+                            <ul>
+                                <li><strong>Lekki Plant Market:</strong> Wide variety of plants at competitive prices</li>
+                                <li><strong>The Garden Centre, Ikoyi:</strong> Curated selection of plants and premium gardening supplies</li>
+                                <li><strong>Maryland Nurseries:</strong> Established nursery with experienced staff</li>
+                            </ul>
+                            <div class="store-contact">
+                                <span><i class="fas fa-map-marker-alt"></i> Various locations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="store-card">
+                            <h3>Seed Sources</h3>
+                            <p>Quality seeds adapted to Lagos's climate:</p>
+                            <ul>
+                                <li><strong>Premier Seeds Nigeria:</strong> Wide range of vegetable and flower seeds</li>
+                                <li><strong>Value Seeds:</strong> Focuses on vegetable varieties that perform well in Nigerian climate</li>
+                                <li><strong>Local Markets:</strong> Mile 12 and Oyingbo markets often have vegetable seeds</li>
+                            </ul>
+                            <div class="store-contact">
+                                <span><i class="fas fa-globe"></i> Most have online ordering options</span>
+                            </div>
+                        </div>
+                        
+                        <div class="store-card">
+                            <h3>Soil & Amendments</h3>
+                            <p>Sources for quality soil and organic amendments:</p>
+                            <ul>
+                                <li><strong>Plant Care Essentials:</strong> Quality potting soil and amendments</li>
+                                <li><strong>Farmsquare Agro Services:</strong> Bulk soil, compost, and fertilizers</li>
+                                <li><strong>Local Poultry Farms:</strong> Source for well-composted manure</li>
+                            </ul>
+                            <div class="store-contact">
+                                <span><i class="fas fa-phone"></i> Contact information available upon request</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subscribe section -->
+                <section class="subscribe-section">
+                    <h2>Get Lagos-Specific Gardening Tips</h2>
+                    <p>Subscribe to our newsletter for seasonal advice, local gardening events, and tips specifically tailored to Lagos gardeners.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                    <div class="downloads">
+                        <h3>Local Gardening Resources</h3>
+                        <ul>
+                            <li><a href="downloads/lagos-gardening-calendar.pdf"><i class="fas fa-file-pdf"></i> Lagos Gardening Calendar</a></li>
+                            <li><a href="downloads/local-suppliers-directory.pdf"><i class="fas fa-file-pdf"></i> Local Suppliers Directory</a></li>
+                            <li><a href="downloads/tropical-pest-management.pdf"><i class="fas fa-file-pdf"></i> Tropical Pest Management Guide</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer with sitemap -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Site Map</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="indoor-plants.html">Indoor Plants</a></li>
+                        <li><a href="local-tips.html">Local Tips</a></li>
+                        <li><a href="form.html">Submit Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-envelope"></i> info@lagosgarden.guide</p>
+                        <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Lagos Garden Guide. All rights reserved.</p>
+                <p>Author: Kehinde John Omotoso | Course: WDD131 | Last Edited on: <span id="last-edit-date"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            // Mobile menu toggle
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Set last edited date
+            document.getElementById('last-edit-date').textContent = new Date().toLocaleDateString();
+            
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab pane
+                    const tabId = this.getAttribute('data-tab');
+                    const targetPane = document.getElementById(tabId);
+                    
+                    if (targetPane) {
+                        // Apply fade effect
+                        targetPane.style.opacity = '0';
+                        targetPane.classList.add('active');
+                        
+                        // Trigger reflow to ensure animation works
+                        void targetPane.offsetWidth;
+                        
+                        // Fade in
+                        targetPane.style.opacity = '1';
+                        
+                        // Clean up inline styles after animation completes
+                        setTimeout(() => {
+                            targetPane.style.opacity = '';
+                        }, 500);
+                    }
+                });
+            });
+            
+            // Accordion functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionItem = this.parentElement;
+                    const icon = this.querySelector('.accordion-icon i');
+                    
+                    // Toggle active class on the clicked item
+                    accordionItem.classList.toggle('active');
+                    
+                    // Change the icon
+                    if (accordionItem.classList.contains('active')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation on scroll for timeline items
+            const animateOnScroll = () => {
+                const items = document.querySelectorAll('.timeline-item, .card, .care-item, .store-card, .season-card');
+                
+                items.forEach(item => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (itemPosition < screenPosition) {
+                        item.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Run on load and scroll
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html> 
