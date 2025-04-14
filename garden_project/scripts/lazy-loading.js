@@ -1,7 +1,28 @@
 // Lazy Loading Implementation
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Get all images with lazy-image class
+    // Check for any images that might need lazy loading but don't have it applied
+    const addNativeLazyLoading = () => {
+        // Select all images that are likely below the fold (not in header/hero sections)
+        const potentialLazyImages = document.querySelectorAll('img:not([loading])');
+        
+        potentialLazyImages.forEach(img => {
+            // Check if image is likely below the fold
+            const rect = img.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // If image is below the viewport, add native lazy loading
+            if (rect.top > viewportHeight) {
+                img.setAttribute('loading', 'lazy');
+                console.log(`Added native lazy loading to image: ${img.alt || img.src}`);
+            }
+        });
+    };
+    
+    // Run initially
+    addNativeLazyLoading();
+    
+    // Get all images with lazy-image class for custom implementation
     const lazyImages = document.querySelectorAll('.lazy-image');
     
     if ('IntersectionObserver' in window) {

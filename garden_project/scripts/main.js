@@ -397,6 +397,105 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section, index) => {
         section.style.transitionDelay = `${index * 0.1}s`;
     });
+    
+    // Review form handling
+    const reviewForm = document.getElementById('review-form');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const location = document.getElementById('location').value;
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const reviewType = document.getElementById('review-type').value;
+            
+            // Get rating value
+            let rating = 0;
+            document.querySelectorAll('input[name="rating"]').forEach(input => {
+                if (input.checked) {
+                    rating = parseInt(input.value, 10);
+                }
+            });
+            
+            // Get checked garden types
+            const gardenTypes = [];
+            document.querySelectorAll('input[name="garden-type"]').forEach(checkbox => {
+                if (checkbox.checked) {
+                    gardenTypes.push(checkbox.value);
+                }
+            });
+            
+            // Create review object using template literals
+            const newReview = {
+                id: Date.now(),
+                name,
+                email,
+                location,
+                subject,
+                message,
+                reviewType,
+                gardenTypes,
+                rating,
+                date: new Date().toISOString(),
+                status: 'pending'
+            };
+            
+            // Save to localStorage
+            const reviews = getReviews();
+            reviews.push(newReview);
+            saveReviews(reviews);
+            
+            // Show success message using template literals
+            const successMessage = `Thank you, ${name}! Your ${reviewType} has been submitted successfully.`;
+            showFormMessage(successMessage, 'success');
+            
+            // Reset form
+            reviewForm.reset();
+            
+            // Update the community highlights section if applicable
+            if (document.querySelector('.community-card-container')) {
+                const highlightHTML = `
+                    <div class="community-card ${reviewType}" style="opacity: 0; transform: translateY(20px);">
+                        <div class="community-card-header">
+                            <span class="community-badge">${formatReviewType(reviewType)}</span>
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="community-card-content">
+                            <h3 class="community-card-title">${subject}</h3>
+                            <p class="community-card-text">"${message.substring(0, 100)}${message.length > 100 ? '...' : ''}"</p>
+                            <div class="community-card-meta">
+                                <span><i class="fas fa-user"></i> ${name}</span>
+                                ${location ? `<span><i class="fas fa-map-marker-alt"></i> ${location}</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                const container = document.querySelector('.community-card-container');
+                container.insertAdjacentHTML('afterbegin', highlightHTML);
+                
+                // Animate the new card
+                setTimeout(() => {
+                    const newCard = container.firstElementChild;
+                    newCard.style.opacity = '1';
+                    newCard.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+        
+        // Show the "other location" field when "Other" is selected
+        const locationSelect = document.getElementById('location');
+        const otherLocationGroup = document.getElementById('other-location-group');
+        
+        if (locationSelect && otherLocationGroup) {
+            locationSelect.addEventListener('change', () => {
+                otherLocationGroup.style.display = locationSelect.value === 'Other' ? 'block' : 'none';
+            });
+        }
+    }
 });
 
 // Throttle function to limit execution frequency
@@ -587,7 +686,6 @@ function updatePlantList(plants, plantList, noPlantMessage, animate = false) {
             // Determine if plant needs watering soon (within 2 days)
             const today = new Date();
             const daysUntilWatering = Math.ceil((nextWatering - today) / (1000 * 60 * 60 * 24));
-            const wateringSoonClass = daysUntilWatering <= 2 ? 'watering-soon' : '';
             
             // Create entry HTML using template literals
             plantEntry.innerHTML = `
@@ -595,9 +693,9 @@ function updatePlantList(plants, plantList, noPlantMessage, animate = false) {
                 <p><strong>Type:</strong> ${plant.type}</p>
                 ${plant.purchaseDate ? `<p><strong>Purchased:</strong> ${formatDate(new Date(plant.purchaseDate))}</p>` : ''}
                 ${plant.notes ? `<p><strong>Notes:</strong> ${plant.notes}</p>` : ''}
-                <div class="watering-info ${wateringSoonClass}">
+                <div class="watering-info ${daysUntilWatering <= 2 ? 'watering-soon' : ''}">
                     <p><strong>Last watered:</strong> ${lastWateredFormatted}</p>
-                    <p class="next-watering"><strong>Water next:</strong> ${nextWateringFormatted}</p>
+                    <p class="next-watering"><strong>Water next:</strong> ${nextWateringFormatted} ${daysUntilWatering <= 0 ? '<span class="overdue">(Overdue)</span>' : daysUntilWatering <= 2 ? '<span class="soon">(Soon)</span>' : ''}</p>
                     <button class="water-now-btn" data-id="${plant.id}">Water Now</button>
                 </div>
             `;
@@ -1001,4 +1099,27 @@ const createBackToTopButton = () => {
     document.head.appendChild(style);
 };
 
-createBackToTopButton(); 
+createBackToTopButton();
+
+// Helper function to format review type for display
+function formatReviewType(type) {
+    const typeMap = {
+        'question': 'Question',
+        'success-story': 'Success Story',
+        'challenge': 'Challenge',
+        'tip': 'Gardening Tip',
+        'feedback': 'Feedback'
+    };
+    
+    return typeMap[type] || type;
+}
+
+// Local storage functions for reviews
+function getReviews() {
+    const reviewsJSON = localStorage.getItem('lagosGardenReviews');
+    return reviewsJSON ? JSON.parse(reviewsJSON) : [];
+}
+
+function saveReviews(reviews) {
+    localStorage.setItem('lagosGardenReviews', JSON.stringify(reviews));
+} 
